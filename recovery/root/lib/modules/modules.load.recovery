@@ -88,6 +88,8 @@ panel-truly-nt35595-cmd.ko
 mediatek-drm-gateic.ko
 mediatek-drm-panel-drv.ko
 mediatek-drm.ko
+ft8057p_spi.ko
+nt36528_spi.ko
 aee_rs.ko
 mmprofile.ko
 mtk-uart-apdma.ko
