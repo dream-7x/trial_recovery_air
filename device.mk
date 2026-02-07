@@ -39,6 +39,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 33
+BOARD_SYSTEMSDK_VERSIONS := 35
 PRODUCT_TARGET_VNDK_VERSION := current
 
 # Enable Fuse Passthrough
