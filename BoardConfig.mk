@@ -99,6 +99,8 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 
 # Kernel Modules
+TW_LOAD_VENDOR_MODULES := "ft8057p_spi.ko nt36528_spi.ko"
+TW_LOAD_VENDOR_BOOT_MODULES := true
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(shell cat device/xiaomi/air/recovery/root/lib/modules/modules.load.android)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/xiaomi/air/recovery/root/lib/modules/modules.load)
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(shell cat device/xiaomi/air/recovery/root/lib/modules/modules.load.recovery)
