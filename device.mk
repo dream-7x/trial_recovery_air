@@ -35,8 +35,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # API
-PRODUCT_SHIPPING_API_LEVEL := 33
-BOARD_SYSTEMSDK_VERSIONS := 35
+PRODUCT_SHIPPING_API_LEVEL := 32
+BOARD_SYSTEMSDK_VERSIONS := 32
 PRODUCT_TARGET_VNDK_VERSION := current
 
 # Enable Fuse Passthrough
