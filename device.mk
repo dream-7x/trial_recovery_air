@@ -2,18 +2,6 @@
 # Configure Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-# Enable virtual A/B OTA
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
-
-# Configure launch_with_vendor_ramdisk.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-
-# Enable developer GSI keys
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
-# Configure emulated_storage.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
 
