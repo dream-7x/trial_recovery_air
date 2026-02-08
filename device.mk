@@ -34,10 +34,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Configure twrp common.mk
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+PRODUCT_PACKAGES += \
+    create_pl_dev \
+    create_pl_dev.recovery
+
 # API
 PRODUCT_SHIPPING_API_LEVEL := 32
 BOARD_SYSTEMSDK_VERSIONS := 32
-PRODUCT_TARGET_VNDK_VERSION := current
+PRODUCT_TARGET_VNDK_VERSION := 35
 
 # Enable Fuse Passthrough
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
@@ -117,12 +121,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1 \
-    android.hardware.keymaster@4.0 \
-    android.hardware.keymaster@3.0
-    
+ PRODUCT_PACKAGES += \
+    create_pl_dev \
+    create_pl_dev.recovery
+  
 # Mtk plpath utils
 PRODUCT_PACKAGES += \
     mtk_plpath_utils \
