@@ -65,9 +65,8 @@ BOARD_RAMDISK_OFFSET := 0x26F08000
 BOARD_TAGS_OFFSET := 0x07C88000
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_DTB_OFFSET := 0x07C88000
+BOARD_VENDOR_CMDLINE := "bootopt=64S3,32N2,64N2 androidboot.selinux=permissivev"
 
-BOARD_VENDOR_CMDLINE := bootopt=64S3,32N2,64N2
-BOARD_VENDOR_CMDLINE += androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_MKBOOTIMG_ARGS += --vendor_cmdline $(BOARD_VENDOR_CMDLINE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_PAGE_SIZE) --board ""
@@ -91,6 +90,7 @@ AB_OTA_PARTITIONS += \
     system_ext \
     vbmeta_system \
     odm
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -152,18 +152,14 @@ TARGET_USES_MKE2FS := true
 TW_INCLUDE_FUSE_NTFS := true
 TW_INCLUDE_FUSE_EXFAT := true
 
+# StatusBar
+TW_STATUS_ICONS_ALIGN := left
+TW_CUSTOM_CLOCK_POS := "90"
+TW_CUSTOM_BATTERY_POS := "680"
+
 # TWRP Configurations
 TW_FRAMERATE := 60
-TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_POS := "90"
-TW_CUSTOM_CLOCK_POS := "540"
-TW_CUSTOM_BATTERY_POS := "630"
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone1/temp"
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_DEFAULT_BRIGHTNESS := 900
-TW_MAX_BRIGHTNESS := 2047
 TWRP_NEW_THEME := true
-TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_APEX := true
 TW_EXTRA_LANGUAGES := true
@@ -172,7 +168,13 @@ TW_HAS_NO_DISPLAY_CUTOUT := false
 TW_NO_LEGACY_PROPS := true
 TW_NO_BIND_SYSTEM := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
+TW_THEME := portrait_hdpi
 TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_DEFAULT_BRIGHTNESS := 900
+TW_MAX_BRIGHTNESS := 2047
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+
+# Variant
 TW_DEVICE_VERSION := by_dream-7x
 MAINTAINER := dream-7x
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
