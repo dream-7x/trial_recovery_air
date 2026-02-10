@@ -27,6 +27,9 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from air device
 $(call inherit-product, device/xiaomi/air/device.mk)
 
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+ENABLE_VIRTUAL_AB := true
+
 PRODUCT_DEVICE := air
 PRODUCT_NAME := twrp_air
 PRODUCT_BRAND := Redmi
